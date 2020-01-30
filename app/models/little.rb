@@ -1,0 +1,4 @@
+class Little < ApplicationRecord
+
+    
+end

@@ -1,0 +1,4 @@
+class Big < ApplicationRecord
+
+    
+end

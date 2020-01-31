@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_201810) do
+ActiveRecord::Schema.define(version: 2020_01_30_194626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "appointments", force: :cascade do |t|
     t.integer "big_id"
@@ -25,7 +32,8 @@ ActiveRecord::Schema.define(version: 2020_01_28_201810) do
 
   create_table "bigs", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
+    t.string "user_type"
     t.string "fieldsofexperince"
     t.string "applicationquestion1"
     t.string "applicationquestion2"

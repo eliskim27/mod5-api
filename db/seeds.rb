@@ -36,6 +36,7 @@ all_bigs = [
         username: "test big 1",
         password: "test",
         fieldsofexperince: ["business", "medicine"],
+        user_type: 'big',
         applicationquestion1: "devon",
         applicationquestion2: "big1"
     },
@@ -43,6 +44,7 @@ all_bigs = [
         username: "test big 2",
         password: "test",
         fieldsofexperince: ["business", "medicine"],
+        user_type: 'big',
         applicationquestion1: "elise",
         applicationquestion2: "big2"
     },
@@ -50,6 +52,7 @@ all_bigs = [
         username: "test big 3",
         password: "test",
         fieldsofexperince: ["business", "medicine"],
+        user_type: 'big',
         applicationquestion1: "franklin",
         applicationquestion2: "big3"
     }
@@ -70,6 +73,13 @@ all_appointments = [
         big_id: 1,
         little_id: 3,
         appt_time: "some date time obj"
+    }
+]
+
+all_admins = [
+    {
+        username: "admin",
+        password: "123"
     }
 ]
 
@@ -97,4 +107,12 @@ all_appointments.each do |appointment|
     Appointment.create(appointment)
 end
 puts "creating more appointments"
+puts ""
+
+Admin.destroy_all
+puts "destroying all admins"
+all_admins.each do |admin|
+    Admin.create(admin)
+end
+puts "creating more admins"
 puts ""

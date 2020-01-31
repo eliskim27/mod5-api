@@ -5,4 +5,9 @@ class Api::V1::AppointmentsController < ApplicationController
         render json: appointments, except: [:created_at, :updated_at]
     end
 
+    def create
+        
+    end
+
+
 end
